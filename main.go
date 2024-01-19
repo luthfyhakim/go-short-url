@@ -11,6 +11,7 @@ func main() {
 		urls: make(map[string]string),
 	}
 
+	http.HandleFunc("/", shortener.HandleForm)
 	http.HandleFunc("/shorten", shortener.HandleShorten)
 	http.HandleFunc("/short/", shortener.HandleRedirect)
 
